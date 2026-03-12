@@ -1,6 +1,5 @@
 package com.team1.hrbank.entity;
 
-import com.team1.hrbank.entity.base.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -22,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "backups")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Backup {  // ① id, createdAt 상속
+public class Backup {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +31,7 @@ public class Backup {  // ① id, createdAt 상속
   private String worker;
 
   @Column(nullable = false)
-  private Instant startedAt;  // ② Instant로 통일 (BaseEntity가 Instant 사용)
+  private Instant startedAt;
 
   private Instant endedAt;
 
